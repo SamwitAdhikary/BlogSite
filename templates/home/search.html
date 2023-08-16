@@ -8,8 +8,8 @@
 
 <section class="cta-section theme-bg-light py-5">
     <div class="container text-center">
-        <h2 class="heading">Coding Arena - A Blog For Coding Lovers</h2>
-        <div class="intro">Welcome to my blog. Subscribe and get my latest blog post in your inbox.</div>
+        <h2 class="heading">Coding Blog - A Blog For Coding Lovers</h2>
+        <div class="intro">Welcome to my blog. Search anything you want to learn.</div>
         <form method="get" action="/search" class="form-inline my-2 my-lg-0 justify-content-center pt-3">
             <input name="query" id="query" value="{{request.GET.query}}" class="form-control mr-sm-2" type="search"
                 placeholder="Search" aria-label="Search">
@@ -41,6 +41,7 @@
         <br>
         <div class="item mb-5">
             <div class="media">
+                <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="/media/{{post.featured_image}}" alt="image">
                 <div class="media-body">
                     <h3 class="title mb-1"><a href="blog/{{post.slug}}">{{post.title}}</a></h3>
                     <div class="meta mb-1"><span class="date">{{post.timestamp}}</span><span

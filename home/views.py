@@ -24,7 +24,7 @@ def contact(request):
     # return HttpResponse('This is contact page')
 
 def search(request):
-    posts_list = Post.objects.all()
+    posts_list = Post.objects.filter(published=True).order_by('-timestamp')
     query = request.GET.get('query')
     if query:
         posts_list = Post.objects.filter(

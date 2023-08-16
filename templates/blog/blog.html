@@ -1,6 +1,6 @@
 {% extends 'basic.html' %}
 
-{% block title %} Blog | Coding Arena Bangla {% endblock title %}
+{% block title %} Blog | Coding Blog {% endblock title %}
 
 {% block blogactive %} active {% endblock blogactive %}
 
@@ -13,6 +13,7 @@
         <div class="item mb-5">
 
             <div class="media">
+              <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="/media/{{posts.featured_image}}" alt="image">
                 <div class="media-body">
                     <h3 class="title mb-1"><a href="{{posts.slug}}">{{posts.title}}</a></h3>
                     <div class="meta mb-1"><span class="date">{{posts.timestamp}}</span><span

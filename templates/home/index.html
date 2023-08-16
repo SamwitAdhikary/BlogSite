@@ -1,6 +1,6 @@
 {% extends 'basic.html' %}
 
-{% block title %} Home | Coding Arena Bangla {% endblock title %}
+{% block title %} Home | Coding Blog {% endblock title %}
 
 {% block homeactive %} active {% endblock homeactive %}
 
@@ -8,8 +8,8 @@
 
 <section class="cta-section theme-bg-light py-5">
     <div class="container text-center">
-        <h2 class="heading">Coding Arena - A Blog For Coding Lovers</h2>
-        <div class="intro">Welcome to my blog. Subscribe and get my latest blog post in your inbox.</div>
+        <h2 class="heading">Coding Blog - A Blog For Coding Lovers</h2>
+        <div class="intro">Welcome to my blog. Search anything you want to learn.</div>
         <form method="get" action="/search" class="form-inline my-2 my-lg-0 justify-content-center pt-3">
             <input name="query" id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
@@ -24,6 +24,7 @@
         <div class="item mb-5">
 
             <div class="media">
+                <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="/media/{{posts.featured_image}}" alt="image">
                 <div class="media-body">
                     <h3 class="title mb-1"><a href="blog/{{posts.slug}}">{{posts.title}}</a></h3>
                     <div class="meta mb-1"><span class="date">{{posts.timestamp}}</span><span
