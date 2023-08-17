@@ -10,7 +10,8 @@
     <div class="container text-center">
         <h2 class="heading">Coding Blog - A Blog For Coding Lovers</h2>
         <div class="intro">Welcome to my blog. Search anything you want to learn.</div>
-        <form method="get" action="/search" class="form-inline my-2 my-lg-0 justify-content-center pt-3">
+        <form method="POST" action="/search" class="form-inline my-2 my-lg-0 justify-content-center pt-3">
+            {% csrf_token %}
             <input name="query" id="query" value="{{request.GET.query}}" class="form-control mr-sm-2" type="search"
                 placeholder="Search" aria-label="Search">
             <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
@@ -18,6 +19,7 @@
     </div>
     <!--//container-->
 </section>
+
 
 <section class="blog-list px-3 py-5 p-md-5">
     <div class="container">
