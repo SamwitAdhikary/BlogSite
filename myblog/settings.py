@@ -27,7 +27,7 @@ SECRET_KEY = 'hpk62o$cons&)+ap(il9fd^&!je%9*ogn60@=ex6t+p2@@543w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'blog.apps.BlogConfig',
     'pwa',
+    'maintenance_mode',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'maintenance_mode.middleware.MaintenanceModeMiddleware',
 ]
 
 ROOT_URLCONF = 'myblog.urls'
@@ -122,6 +124,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     "static/"
@@ -159,3 +163,7 @@ PWA_APP_SPLASH_SCREEN = [
 ]
 PWA_APP_DIR = 'ltr'
 PWA_APP_LANG = 'en-US'
+
+# Maintenance Mode
+MAINTENANCE_MODE = True
+MAINTENANCE_MODE_IGNORE_ADMIN_SITE = True
